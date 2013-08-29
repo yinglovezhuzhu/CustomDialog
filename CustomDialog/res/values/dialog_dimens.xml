@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 对话框Start -->
+	<dimen name="menu_dialog_content_padding_vertical">20dip</dimen>
+	<dimen name="menu_dialog_content_padding_horizontal">20dip</dimen>
+	<dimen name="menu_dialog_menu_divider_height">12dip</dimen>
+	<dimen name="menu_dialog_menu_negative_marging">25dip</dimen>
+	
+	<dimen name="menu_dialog_menu_item_minHeight">35dip</dimen>
+	<dimen name="menu_dialog_menu_item_textSize">18sp</dimen>
+	
+	<dimen name="custom_dialog_title_iconSize">22dip</dimen>
+	<dimen name="custom_dialog_title_textSize">20sp</dimen>
+	<dimen name="custom_dialog_button_padding">8dip</dimen>
+	<dimen name="custom_dialog_button_textSize">18sp</dimen>
+	<dimen name="custom_dialog_button_margin">10dip</dimen>
+	<dimen name="custom_dialog_title_padding">10dip</dimen>
+	<dimen name="custom_dialog_body_padding">10dip</dimen>
+	<dimen name="custom_dialog_foot_padding">10dip</dimen>
+	<dimen name="custom_dialog_icon_marging">8dip</dimen>
+	<dimen name="custom_dialog_message_textSize">17sp</dimen>
+	<dimen name="custom_dialog_item_padding">8dip</dimen>
+	<dimen name="custom_dialog_item_textSize">17sp</dimen>
+	<dimen name="custom_dialog_item_iconSize">18dip</dimen>
+	<dimen name="custom_dialog_item_icon_marging">10dip</dimen>
+	
+	<!-- 对话框End -->
+</resources>

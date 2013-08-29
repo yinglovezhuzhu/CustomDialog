@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/custom_dialog_item_padding"
+    android:paddingBottom="@dimen/custom_dialog_item_padding" >
+    <ImageView 
+        android:id="@+id/iv_item_dialog_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/custom_dialog_item_icon_marging"
+        android:maxWidth="@dimen/custom_dialog_item_iconSize"
+        android:maxHeight="@dimen/custom_dialog_item_iconSize"
+        android:contentDescription="@string/app_name"/>
+	<TextView 
+	    style="@style/CustomDialogItemText"
+	    android:id="@+id/tv_item_dialog_text"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/iv_item_dialog_icon"/>
+</RelativeLayout>

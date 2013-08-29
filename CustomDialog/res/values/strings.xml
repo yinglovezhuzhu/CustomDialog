@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CustomDialog</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <string name="menu_dialog">MenuDialog</string>
+    
+    <string name="msg_dialog">MessageDialog</string>
+    
+    <string name="items_dialog">ItemsDialog</string>
+    
+    <string name="single_choice_dialog">SingleChoiceDialog</string>
+    
+    <string name="multi_choice_dialog">MultiChoiceDialog</string>
+    
+    
+    <string name="message">This is a message dialog, you can display messge to user by this dialog, and you can use positive button, negative button, or both of them.</string>
+
+</resources>
