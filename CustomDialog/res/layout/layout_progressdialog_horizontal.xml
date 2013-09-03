@@ -25,7 +25,6 @@
 	        android:id="@+id/tv_custom_progressdialog_horizontal_percent"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_alignParentRight="true"
-	        android:layout_toRightOf="@+id/tv_custom_progressdialog_horizontal_number"/>
+	        android:layout_alignParentRight="true"/>
 	</RelativeLayout>
 </LinearLayout>

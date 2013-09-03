@@ -307,7 +307,7 @@ public class CustomProgressDialog extends Dialog {
     }
     
     public void setMessage(CharSequence message) {
-        if (mProgress != null) {
+        if (mMessageView != null) {
             mMessageView.setText(message);
         } else {
             mMessage = message;

@@ -208,6 +208,7 @@ public class MainActivity extends Activity implements OnClickListener{
 			cpd2.setProgressStyle(CustomProgressDialog.STYLE_HORIZONTAL);
 			cpd2.show();
 			cpd2.setProgress(50);
+			cpd2.setMessage("aaaa");
 			break;
 		default:
 			break;
