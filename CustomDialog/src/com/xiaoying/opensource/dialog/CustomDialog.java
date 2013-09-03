@@ -13,6 +13,7 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -33,6 +34,8 @@ public class CustomDialog extends Dialog {
 	private TextView mTvTitle = null;
 	
 	private TextView mTvMessage = null;
+
+	private EditText mEtInput = null;
 	
 	private ListView mListView = null;
 	
@@ -84,6 +87,7 @@ public class CustomDialog extends Dialog {
 		mIvIcon = (ImageView) findViewById(R.id.iv_dialog_icon);
 		mTvTitle = (TextView) findViewById(R.id.tv_dialog_title);
 		mTvMessage = (TextView) findViewById(R.id.tv_dialog_message);
+		mEtInput = (EditText) findViewById(R.id.tv_dialog_input);
 		mListView = (ListView) findViewById(R.id.lv_dialog_items);
 		mBtnPositive = (Button) findViewById(R.id.btn_dialog_positive);
 		mBtnNegative = (Button) findViewById(R.id.btn_dialog_negative);
@@ -172,6 +176,69 @@ public class CustomDialog extends Dialog {
 		}
 		return this;
 	}
+	/**
+	 * Set dialog input.
+	 * @param hint
+	 * @return
+	 */
+	public CustomDialog setInput(CharSequence hint) {
+		mFlBody.setVisibility(View.VISIBLE);
+		mListView.setVisibility(View.GONE);
+		mEtInput.setVisibility(View.VISIBLE);
+		mEtInput.setText("");
+		if(hint != null) {
+			mEtInput.setHint(hint);
+		}
+		return this;
+	}
+	
+	/**
+	 * Set dialog input.
+	 * @param hint
+	 * @return
+	 */
+	public CustomDialog setInput(int hintRes) {
+		mFlBody.setVisibility(View.VISIBLE);
+		mListView.setVisibility(View.GONE);
+		mEtInput.setVisibility(View.VISIBLE);
+		mEtInput.setText("");
+		if(hintRes > 0) {
+			mEtInput.setHint(hintRes);
+		}
+		return this;
+	}
+	
+	/**
+	 * Get dialog input text. 
+	 * @return The text in input EditText, but null text when input EditText is not visibility.
+	 */
+	public CharSequence getInputText() {
+		if(mEtInput.getVisibility() == View.VISIBLE) {
+			return mEtInput.getText();
+		}
+		return "";
+	}
+	
+	/**
+	 * Set dialog input text. If input EditText dose not visibility, it would't set.
+	 * @param text
+	 */
+	public void setInputText(CharSequence text) {
+		if(mEtInput.getVisibility() == View.VISIBLE) {
+			mEtInput.setText(text);
+		}
+	}
+	
+	/**
+	 * Set dialog input text. If input EditText dose not visibility, it would't set.
+	 * @param text
+	 */
+	public void setInputText(int resId) {
+		if(mEtInput.getVisibility() == View.VISIBLE) {
+			mEtInput.setText(resId);
+		}
+	}
+	
 	
 	/**
 	 * Set positive button text and listener.

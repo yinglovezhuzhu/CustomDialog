@@ -37,12 +37,25 @@
         android:layout_weight="1"
         android:padding="@dimen/custom_dialog_body_padding"
         android:visibility="visible">
-        <TextView 
-            style="@style/CustomDialogMessage"
-            android:id="@+id/tv_dialog_message"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone"/>
+	    <LinearLayout 
+	        android:orientation="vertical"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content">
+	        <TextView 
+	            style="@style/CustomDialogMessage"
+	            android:id="@+id/tv_dialog_message"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:visibility="gone" />
+	        <EditText 
+	            style="@style/CustomDialogInput"
+	            android:id="@+id/tv_dialog_input"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="@dimen/custom_dialog_msg_input_marging"
+	            android:inputType="text"
+	            android:visibility="gone" />
+	    </LinearLayout>
         <ListView 
             android:id="@+id/lv_dialog_items"
             android:layout_width="match_parent"
