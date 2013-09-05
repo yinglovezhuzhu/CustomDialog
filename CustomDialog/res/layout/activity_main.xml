@@ -23,6 +23,12 @@
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:text="@string/msg_dialog"/>
+
+	    <Button 
+	        android:id="@+id/btn_msg_dialog_close"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/msg_dialog_close"/>
 	    
 	    <Button 
 	        android:id="@+id/btn_input_dialog"

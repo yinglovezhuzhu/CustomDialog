@@ -6,8 +6,10 @@
     <string name="hello_world">Hello world!</string>
     
     <string name="menu_dialog">MenuDialog</string>
-    
+
     <string name="msg_dialog">MessageDialog</string>
+    
+    <string name="msg_dialog_close">DialogWithClose</string>
 
     <string name="input_dialog">InputDialog</string>
     

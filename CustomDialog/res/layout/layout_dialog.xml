@@ -8,26 +8,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/custom_dialog_title_padding"
-        android:visibility="gone">
+        android:visibility="gone" >
         <ImageView 
             android:id="@+id/iv_dialog_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/custom_dialog_title_iconSize"
+            android:layout_height="@dimen/custom_dialog_title_iconSize"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/custom_dialog_icon_marging"
-            android:maxWidth="@dimen/custom_dialog_title_iconSize"
-            android:maxHeight="@dimen/custom_dialog_title_iconSize"
             android:contentDescription="@string/app_name"
-            android:visibility="gone"/>
+            android:background="@drawable/ic_launcher"
+            android:scaleType="fitCenter"
+            android:visibility="gone" />
 	    <TextView 
 	        style="@style/CustomDialogTitle"
 	        android:id="@+id/tv_dialog_title"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
-	        android:layout_alignParentRight="true"
+	        android:layout_centerInParent="true"
 	        android:layout_toRightOf="@+id/iv_dialog_icon"
-            android:layout_centerVertical="true"
+	        android:layout_toLeftOf="@+id/btn_dialog_close"
+	        android:visibility="gone" />
+	    <Button 
+	        android:id="@+id/btn_dialog_close"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerVertical="true"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginLeft="@dimen/custom_dialog_icon_marging"
+	        android:minWidth="@dimen/custom_dialog_close_minSize"
+	        android:minHeight="@dimen/custom_dialog_close_minSize"
+	        android:maxWidth="@dimen/custom_dialog_close_maxSize"
+	        android:maxHeight="@dimen/custom_dialog_close_maxSize"
+	        android:background="@drawable/btn_dialog_close_selector"
 	        android:visibility="gone"/>
     </RelativeLayout>
     <FrameLayout 

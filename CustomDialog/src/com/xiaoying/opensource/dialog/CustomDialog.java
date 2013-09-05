@@ -23,6 +23,11 @@ import android.widget.TextView;
 
 public class CustomDialog extends Dialog {
 	
+	/**
+	 * The identifier for the close button. 
+	 */
+	public static final int BUTTON_CLOSE = -4;
+	
 	private RelativeLayout mRlTitle = null;
 	
 	private FrameLayout mFlBody = null;
@@ -33,6 +38,8 @@ public class CustomDialog extends Dialog {
 	
 	private TextView mTvTitle = null;
 	
+	private Button mBtnClose = null;
+	
 	private TextView mTvMessage = null;
 
 	private EditText mEtInput = null;
@@ -42,6 +49,8 @@ public class CustomDialog extends Dialog {
 	private Button mBtnPositive = null;
 	
 	private Button mBtnNegative = null;
+	
+	private DialogInterface.OnClickListener mColseClickListener = null;
 	
 	private DialogInterface.OnClickListener mPositiveClickListener = null;
 	
@@ -86,6 +95,7 @@ public class CustomDialog extends Dialog {
 		
 		mIvIcon = (ImageView) findViewById(R.id.iv_dialog_icon);
 		mTvTitle = (TextView) findViewById(R.id.tv_dialog_title);
+		mBtnClose = (Button) findViewById(R.id.btn_dialog_close);
 		mTvMessage = (TextView) findViewById(R.id.tv_dialog_message);
 		mEtInput = (EditText) findViewById(R.id.tv_dialog_input);
 		mListView = (ListView) findViewById(R.id.lv_dialog_items);
@@ -106,6 +116,17 @@ public class CustomDialog extends Dialog {
 			mTvTitle.setGravity(Gravity.LEFT);
 		}
 		return this;
+	}
+	
+	
+	@Override
+	public void setTitle(CharSequence title) {
+		setTitleText(title);
+	}
+	
+	@Override
+	public void setTitle(int titleId) {
+		setTitleText(titleId);
 	}
 	
 	/**
@@ -145,6 +166,42 @@ public class CustomDialog extends Dialog {
 	public CustomDialog setTitleTextGravity(int gravity) {
 		mTvTitle.setGravity(mIvIcon.getVisibility() == View.VISIBLE ? Gravity.LEFT : gravity);
 		return this;
+	}
+	
+	/**
+	 * Set close button.
+	 * @param resid
+	 * @param listener
+	 * @return
+	 */
+	public CustomDialog setCloseButton(int resid, DialogInterface.OnClickListener listener) {
+		mRlTitle.setVisibility(View.VISIBLE);
+		mBtnClose.setVisibility(View.VISIBLE);
+		mBtnClose.setBackgroundResource(resid);
+		this.mColseClickListener = listener;
+		mBtnClose.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if(mColseClickListener != null) {
+					mColseClickListener.onClick(CustomDialog.this, BUTTON_CLOSE);
+				}
+			}
+		});
+		return this;
+	}
+	
+	/**
+	 * Set close button, with default listener
+	 * @param resid
+	 * @return
+	 */
+	public CustomDialog setCloseButton(int resid) {
+		return setCloseButton(resid, new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.cancel();
+			}
+		});
 	}
 	
 	/**

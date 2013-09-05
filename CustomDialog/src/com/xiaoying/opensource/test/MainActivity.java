@@ -33,6 +33,7 @@ public class MainActivity extends Activity implements OnClickListener{
 		
 		findViewById(R.id.btn_menu_dialog).setOnClickListener(this);
 		findViewById(R.id.btn_msg_dialog).setOnClickListener(this);
+		findViewById(R.id.btn_msg_dialog_close).setOnClickListener(this);
 		findViewById(R.id.btn_input_dialog).setOnClickListener(this);
 		findViewById(R.id.btn_items_dialog).setOnClickListener(this);
 		findViewById(R.id.btn_single_choice_dialog).setOnClickListener(this);
@@ -78,6 +79,27 @@ public class MainActivity extends Activity implements OnClickListener{
 			new CustomDialog(this)
 			.setIcon(R.drawable.ic_launcher)
 			.setTitleText(R.string.app_name)
+			.setMessage(R.string.message)
+			.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					dialog.cancel();
+				}
+			})
+			.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					dialog.cancel();
+				}
+			}).show();
+			break;
+		case R.id.btn_msg_dialog_close:
+			new CustomDialog(this)
+			.setIcon(R.drawable.ic_launcher)
+			.setTitleText(R.string.app_name)
+			.setCloseButton(R.drawable.btn_dialog_close_selector)
 			.setMessage(R.string.message)
 			.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
 				

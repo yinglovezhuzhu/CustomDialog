@@ -9,12 +9,14 @@
 	<dimen name="menu_dialog_menu_item_minHeight">35dip</dimen>
 	<dimen name="menu_dialog_menu_item_textSize">18sp</dimen>
 	
-	<dimen name="custom_dialog_title_iconSize">22dip</dimen>
+	<dimen name="custom_dialog_title_iconSize">35dip</dimen>
 	<dimen name="custom_dialog_title_textSize">20sp</dimen>
 	<dimen name="custom_dialog_button_padding">8dip</dimen>
 	<dimen name="custom_dialog_button_textSize">18sp</dimen>
 	<dimen name="custom_dialog_button_margin">10dip</dimen>
 	<dimen name="custom_dialog_title_padding">10dip</dimen>
+	<dimen name="custom_dialog_close_minSize">25dip</dimen>
+	<dimen name="custom_dialog_close_maxSize">30dip</dimen>
 	<dimen name="custom_dialog_body_padding">10dip</dimen>
 	<dimen name="custom_dialog_msg_input_marging">10dip</dimen>
 	<dimen name="custom_dialog_foot_padding">10dip</dimen>
