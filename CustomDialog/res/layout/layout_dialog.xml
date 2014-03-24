@@ -73,9 +73,11 @@
             android:id="@+id/lv_dialog_items"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:listSelector="@color/transparent"
             android:divider="@drawable/list_divider"
+            android:listSelector="@color/transparent"
             android:cacheColorHint="@color/transparent"
+        	android:scrollingCache="false"
+        	android:fadingEdge="none"
             android:visibility="gone">
             
         </ListView>

@@ -9,7 +9,10 @@
         android:id="@+id/lv_menudialog_list"
         android:layout_width="match_parent"
         android:layout_height="0dip"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:cacheColorHint="@color/transparent"
+        android:scrollingCache="false"
+        android:fadingEdge="none" />
     
     <Button 
         style="@style/MenuDialogMenuButton"
