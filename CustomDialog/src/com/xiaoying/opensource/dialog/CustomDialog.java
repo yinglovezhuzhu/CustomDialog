@@ -614,6 +614,94 @@ public class CustomDialog extends Dialog {
 	}
 	
 	/**
+	 * Set title background resource
+	 * @param resid
+	 * @return
+	 */
+	public CustomDialog setTitleBackgroundResource(int resid) {
+		mRlTitle.setBackgroundResource(resid);
+		return this;
+	}
+	
+	/**
+	 * Set title background color
+	 * @param color
+	 * @return
+	 */
+	public CustomDialog setTitleBackgroudColor(int color) {
+		mRlTitle.setBackgroundColor(color);
+		return this;
+	}
+	
+	/**
+	 * Set content background resource
+	 * @param resid
+	 * @return
+	 */
+	public CustomDialog setContentBackgroundResource(int resid) {
+		mFlBody.setBackgroundResource(resid);
+		return this;
+	}
+	
+	/**
+	 * Set content background color
+	 * @param color
+	 * @return
+	 */
+	public CustomDialog setContentBackgroudColor(int color) {
+		mFlBody.setBackgroundColor(color);
+		return this;
+	}
+	
+	/**
+	 * Set foot background resource
+	 * @param resid
+	 * @return
+	 */
+	public CustomDialog setFootBackgroundResource(int resid) {
+		mLlFoot.setBackgroundResource(resid);
+		return this;
+	}
+	
+	/**
+	 * Set foot background color
+	 * @param color
+	 * @return
+	 */
+	public CustomDialog setFootBackgroudColor(int color) {
+		mLlFoot.setBackgroundColor(color);
+		return this;
+	}
+	
+	/**
+	 * Set background resources.
+	 * @param title
+	 * @param content
+	 * @param foot
+	 * @return
+	 */
+	public CustomDialog setBackgroudResources(int title, int content, int foot) {
+		mRlTitle.setBackgroundResource(title);
+		mFlBody.setBackgroundResource(content);
+		mLlFoot.setBackgroundResource(foot);
+		return this;
+	}
+
+	/**
+	 * Set Background colors.
+	 * @param title
+	 * @param content
+	 * @param foot
+	 * @return
+	 */
+	public CustomDialog setBackgroudColors(int title, int content, int foot) {
+		mRlTitle.setBackgroundColor(title);
+		mFlBody.setBackgroundColor(content);
+		mLlFoot.setBackgroundColor(foot);
+		return this;
+	}
+	
+	/**
 	 * Returns the currently checked items. 
 	 * Note: The result is only valid if the items is {@link CustomDialog#setMultiChoiceItems(CharSequence[], int[], android.content.DialogInterface.OnMultiChoiceClickListener)}(include all of method named setMultiChoiceItems())
 	 * @return The position of the currently checked item or null if items are not multiple choice.
