@@ -63,7 +63,7 @@
 	
 	<!-- 自定义对话框Start -->
     <style name="CustomDialogTheme" parent="@style/DialogTheme">
-        <item name="android:windowBackground">@drawable/bg_dialog</item>
+        <item name="android:windowBackground">@color/transparent</item>
     </style>
     
     <style name="CustomDialogTitle" parent="@style/SingleLine">

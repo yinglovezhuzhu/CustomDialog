@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/custom_dialog_title_padding"
+        android:background="@drawable/bg_dialog_title"
         android:visibility="gone" >
         <ImageView 
             android:id="@+id/iv_dialog_icon"
@@ -49,6 +50,7 @@
         android:layout_height="0dip"
         android:layout_weight="1"
         android:padding="@dimen/custom_dialog_body_padding"
+        android:background="@drawable/bg_dialog_content"
         android:visibility="visible">
 	    <LinearLayout 
 	        android:orientation="vertical"
@@ -88,6 +90,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="@dimen/custom_dialog_foot_padding"
+        android:background="@drawable/bg_dialog_foot"
         android:visibility="gone">
         <Button 
             style="@style/CustomDialogPositiveButton"
