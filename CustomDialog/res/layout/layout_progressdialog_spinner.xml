@@ -10,7 +10,7 @@
         android:id="@+id/pb_custom_progressdialog_spinner_progress"
         android:layout_width="36dip"
         android:layout_height="36dip"
-        android:indeterminateDrawable="@drawable/progress"
+        android:indeterminateDrawable="@drawable/dialog_progress"
         android:indeterminateDuration="3"/>
 	<TextView 
 	    android:id="@+id/tv_custom_progressdialog_spinner_msg"

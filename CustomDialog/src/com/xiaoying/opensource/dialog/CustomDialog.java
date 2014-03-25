@@ -110,7 +110,6 @@ public class CustomDialog extends Dialog {
 	 */
 	public CustomDialog setIcon(int resId) {
 		if(resId != 0) {
-			mRlTitle.setVisibility(View.VISIBLE);
 			mIvIcon.setVisibility(View.VISIBLE);
 			mIvIcon.setImageResource(resId);
 			mTvTitle.setGravity(Gravity.LEFT);
@@ -136,7 +135,6 @@ public class CustomDialog extends Dialog {
 	 */
 	public CustomDialog setTitleText(int resId) {
 		if(resId != 0) {
-			mRlTitle.setVisibility(View.VISIBLE);
 			mTvTitle.setVisibility(View.VISIBLE);
 			mTvTitle.setText(resId);
 		}
@@ -150,7 +148,6 @@ public class CustomDialog extends Dialog {
 	 */
 	public CustomDialog setTitleText(CharSequence text) {
 		if(text != null) {
-			mRlTitle.setVisibility(View.VISIBLE);
 			mTvTitle.setVisibility(View.VISIBLE);
 			mTvTitle.setText(text);
 		}
@@ -175,7 +172,6 @@ public class CustomDialog extends Dialog {
 	 * @return
 	 */
 	public CustomDialog setCloseButton(int resid, DialogInterface.OnClickListener listener) {
-		mRlTitle.setVisibility(View.VISIBLE);
 		mBtnClose.setVisibility(View.VISIBLE);
 		mBtnClose.setBackgroundResource(resid);
 		this.mColseClickListener = listener;
@@ -304,7 +300,6 @@ public class CustomDialog extends Dialog {
 	 * @return
 	 */
 	public CustomDialog setPositiveButton(int resId, DialogInterface.OnClickListener listener) {
-		mLlFoot.setVisibility(View.VISIBLE);
 		mBtnPositive.setVisibility(View.VISIBLE);
 		mBtnPositive.setText(resId);
 		mPositiveClickListener = listener;
@@ -327,7 +322,6 @@ public class CustomDialog extends Dialog {
 	 * @return
 	 */
 	public CustomDialog setPositiveButton(CharSequence text, DialogInterface.OnClickListener listener) {
-		mLlFoot.setVisibility(View.VISIBLE);
 		mBtnPositive.setVisibility(View.VISIBLE);
 		mBtnPositive.setText(text);
 		mPositiveClickListener = listener;
@@ -350,7 +344,6 @@ public class CustomDialog extends Dialog {
 	 * @return
 	 */
 	public CustomDialog setNegativeButton(int resId, DialogInterface.OnClickListener listener) {
-		mLlFoot.setVisibility(View.VISIBLE);
 		mBtnNegative.setVisibility(View.VISIBLE);
 		mBtnNegative.setText(resId);
 		mNegativeClickListener = listener;
@@ -373,7 +366,6 @@ public class CustomDialog extends Dialog {
 	 * @return
 	 */
 	public CustomDialog setNegativeButton(CharSequence text, DialogInterface.OnClickListener listener) {
-		mLlFoot.setVisibility(View.VISIBLE);
 		mBtnNegative.setVisibility(View.VISIBLE);
 		mBtnNegative.setText(text);
 		mNegativeClickListener = listener;
@@ -396,22 +388,22 @@ public class CustomDialog extends Dialog {
 		int windowWidth = getWindow().getAttributes().width;
 		if(mBtnPositive.getVisibility() == View.VISIBLE && mBtnNegative.getVisibility() != View.VISIBLE) {
 			LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) mBtnPositive.getLayoutParams();
-			lp.leftMargin = windowWidth / 4;
-			lp.rightMargin = windowWidth / 4;
+			lp.leftMargin = windowWidth / 6;
+			lp.rightMargin = windowWidth / 6;
 			mBtnPositive.setLayoutParams(lp);
 		} else if(mBtnPositive.getVisibility() != View.VISIBLE && mBtnNegative.getVisibility() == View.VISIBLE) {
 			LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) mBtnNegative.getLayoutParams();
-			lp.leftMargin = windowWidth / 4;
-			lp.rightMargin = windowWidth / 4;
+			lp.leftMargin = windowWidth / 6;
+			lp.rightMargin = windowWidth / 6;
 			mBtnNegative.setLayoutParams(lp);
 		} else if(mBtnPositive.getVisibility() == View.VISIBLE && mBtnNegative.getVisibility() == View.VISIBLE) {
-			LinearLayout.LayoutParams PositiveLp = (LinearLayout.LayoutParams) mBtnPositive.getLayoutParams();
-			PositiveLp.leftMargin = 0;
-			PositiveLp.rightMargin = getContext().getResources().getDimensionPixelSize(R.dimen.custom_dialog_button_margin);
-			mBtnPositive.setLayoutParams(PositiveLp);
+			LinearLayout.LayoutParams positiveLp = (LinearLayout.LayoutParams) mBtnPositive.getLayoutParams();
+			positiveLp.rightMargin = 0;
+			positiveLp.leftMargin = getContext().getResources().getDimensionPixelSize(R.dimen.custom_dialog_button_margin);
+			mBtnPositive.setLayoutParams(positiveLp);
 			LinearLayout.LayoutParams negativeLp = (LinearLayout.LayoutParams) mBtnNegative.getLayoutParams();
-			negativeLp.leftMargin = getContext().getResources().getDimensionPixelSize(R.dimen.custom_dialog_button_margin);
-			negativeLp.rightMargin = 0;
+			negativeLp.leftMargin = 0;
+			negativeLp.rightMargin = getContext().getResources().getDimensionPixelSize(R.dimen.custom_dialog_button_margin);
 			mBtnNegative.setLayoutParams(negativeLp);
 		}
 	}
@@ -700,6 +692,23 @@ public class CustomDialog extends Dialog {
 		mLlFoot.setBackgroundColor(foot);
 		return this;
 	}
+	
+	/**
+	 * Set custom view to the custom dialog.
+	 * @param view
+	 * @return
+	 */
+	public CustomDialog setCustomView(View view) {
+		mTvMessage.setVisibility(View.GONE);
+		mEtInput.setVisibility(View.GONE);
+		mListView.setVisibility(View.GONE);
+		FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, 
+				FrameLayout.LayoutParams.MATCH_PARENT);
+		mFlBody.addView(view, lp);
+		mFlBody.bringChildToFront(view);
+		return this;
+	}
+	
 	
 	/**
 	 * Returns the currently checked items. 

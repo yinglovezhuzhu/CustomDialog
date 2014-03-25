@@ -66,7 +66,7 @@ public class MainActivity extends Activity implements OnClickListener{
 					dialog.cancel();
 				}
 			})
-			.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+			.setNegativeButton(R.string.dialog_cancel, new DialogInterface.OnClickListener() {
 				
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
@@ -77,17 +77,18 @@ public class MainActivity extends Activity implements OnClickListener{
 			break;
 		case R.id.btn_msg_dialog:
 			new CustomDialog(this)
-			.setIcon(R.drawable.ic_launcher)
-			.setTitleText(R.string.app_name)
+//			.setIcon(R.drawable.ic_launcher)
+//			.setTitleText(R.string.app_name)
+//			.setTitleBackgroundResource(R.drawable.bg_title_bar)
 			.setMessage(R.string.message)
-			.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+			.setPositiveButton(R.string.dialog_ok, new DialogInterface.OnClickListener() {
 				
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					dialog.cancel();
 				}
 			})
-			.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+			.setNegativeButton(R.string.dialog_cancel, new DialogInterface.OnClickListener() {
 				
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
@@ -101,14 +102,14 @@ public class MainActivity extends Activity implements OnClickListener{
 			.setTitleText(R.string.app_name)
 			.setCloseButton(R.drawable.btn_dialog_close_selector)
 			.setMessage(R.string.message)
-			.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+			.setPositiveButton(R.string.dialog_ok, new DialogInterface.OnClickListener() {
 				
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					dialog.cancel();
 				}
 			})
-			.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+			.setNegativeButton(R.string.dialog_cancel, new DialogInterface.OnClickListener() {
 				
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
@@ -122,14 +123,14 @@ public class MainActivity extends Activity implements OnClickListener{
 			.setTitleText(R.string.app_name)
 			.setMessage(R.string.message)
 			.setInput("请输入")
-			.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+			.setPositiveButton(R.string.dialog_ok, new DialogInterface.OnClickListener() {
 				
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					dialog.cancel();
 				}
 			})
-			.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+			.setNegativeButton(R.string.dialog_cancel, new DialogInterface.OnClickListener() {
 				
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
@@ -149,14 +150,14 @@ public class MainActivity extends Activity implements OnClickListener{
 					dialog.cancel();
 				}
 			})
-			.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+			.setPositiveButton(R.string.dialog_ok, new DialogInterface.OnClickListener() {
 				
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					dialog.cancel();
 				}
 			})
-			.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+			.setNegativeButton(R.string.dialog_cancel, new DialogInterface.OnClickListener() {
 				
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
@@ -173,17 +174,17 @@ public class MainActivity extends Activity implements OnClickListener{
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					showShortToast("Item Clicked +++>>> " + which);
-					dialog.cancel();
+//					dialog.cancel();
 				}
 			})
-			.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+			.setPositiveButton(R.string.dialog_ok, new DialogInterface.OnClickListener() {
 				
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					dialog.cancel();
 				}
 			})
-			.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+			.setNegativeButton(R.string.dialog_cancel, new DialogInterface.OnClickListener() {
 				
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
@@ -202,14 +203,14 @@ public class MainActivity extends Activity implements OnClickListener{
 					showShortToast("Item Clicked +++>>> " + which + " == " + isChecked);
 				}
 			})
-			.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+			.setPositiveButton(R.string.dialog_ok, new DialogInterface.OnClickListener() {
 				
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					dialog.cancel();
 				}
 			})
-			.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+			.setNegativeButton(R.string.dialog_cancel, new DialogInterface.OnClickListener() {
 				
 				@Override
 				public void onClick(DialogInterface dialog, int which) {

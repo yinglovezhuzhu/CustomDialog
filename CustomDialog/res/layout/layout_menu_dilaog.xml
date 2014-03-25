@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dip"
         android:layout_weight="1"
-        android:cacheColorHint="@color/transparent"
+        android:cacheColorHint="@color/dialog_transparent"
         android:scrollingCache="false"
         android:fadingEdge="none" />
     
@@ -20,6 +20,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/menu_dialog_menu_negative_marging"
-        android:text="@string/cancel"/>
+        android:text="@string/dialog_cancel"/>
 
 </LinearLayout>

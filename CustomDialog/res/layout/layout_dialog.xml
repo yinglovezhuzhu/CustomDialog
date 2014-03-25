@@ -8,8 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/custom_dialog_title_padding"
-        android:background="@drawable/bg_dialog_title"
-        android:visibility="gone" >
+        android:background="@drawable/bg_dialog_top" >
         <ImageView 
             android:id="@+id/iv_dialog_icon"
             android:layout_width="@dimen/custom_dialog_title_iconSize"
@@ -50,7 +49,7 @@
         android:layout_height="0dip"
         android:layout_weight="1"
         android:padding="@dimen/custom_dialog_body_padding"
-        android:background="@drawable/bg_dialog_content"
+        android:background="@drawable/bg_dialog_center"
         android:visibility="visible">
 	    <LinearLayout 
 	        android:orientation="vertical"
@@ -76,8 +75,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:divider="@drawable/list_divider"
-            android:listSelector="@color/transparent"
-            android:cacheColorHint="@color/transparent"
+            android:listSelector="@color/dialog_transparent"
+            android:cacheColorHint="@color/dialog_transparent"
         	android:scrollingCache="false"
         	android:fadingEdge="none"
             android:visibility="gone">
@@ -90,18 +89,17 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="@dimen/custom_dialog_foot_padding"
-        android:background="@drawable/bg_dialog_foot"
-        android:visibility="gone">
+        android:background="@drawable/bg_dialog_bottom">
         <Button 
-            style="@style/CustomDialogPositiveButton"
-            android:id="@+id/btn_dialog_positive"
+            style="@style/CustomDialogNegativeButton"
+            android:id="@+id/btn_dialog_negative"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:visibility="gone"/>
         <Button 
-            style="@style/CustomDialogNegativeButton"
-            android:id="@+id/btn_dialog_negative"
+            style="@style/CustomDialogPositiveButton"
+            android:id="@+id/btn_dialog_positive"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
