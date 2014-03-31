@@ -1,109 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical" >
-    <RelativeLayout 
+
+    <RelativeLayout
         android:id="@+id/rl_dialog_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/custom_dialog_title_padding"
-        android:background="@drawable/bg_dialog_top" >
-        <ImageView 
+        android:background="@drawable/bg_dialog_top"
+        android:padding="@dimen/custom_dialog_title_padding" >
+
+        <ImageView
             android:id="@+id/iv_dialog_icon"
             android:layout_width="@dimen/custom_dialog_title_iconSize"
             android:layout_height="@dimen/custom_dialog_title_iconSize"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/custom_dialog_icon_marging"
-            android:contentDescription="@string/app_name"
             android:background="@drawable/ic_launcher"
+            android:contentDescription="@string/app_name"
             android:scaleType="fitCenter"
             android:visibility="gone" />
-	    <TextView 
-	        style="@style/CustomDialogTitle"
-	        android:id="@+id/tv_dialog_title"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_centerInParent="true"
-	        android:layout_toRightOf="@+id/iv_dialog_icon"
-	        android:layout_toLeftOf="@+id/btn_dialog_close"
-	        android:visibility="gone" />
-	    <Button 
-	        android:id="@+id/btn_dialog_close"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_centerVertical="true"
-	        android:layout_alignParentRight="true"
-	        android:layout_marginLeft="@dimen/custom_dialog_icon_marging"
-	        android:minWidth="@dimen/custom_dialog_close_minSize"
-	        android:minHeight="@dimen/custom_dialog_close_minSize"
-	        android:maxWidth="@dimen/custom_dialog_close_maxSize"
-	        android:maxHeight="@dimen/custom_dialog_close_maxSize"
-	        android:background="@drawable/btn_dialog_close_selector"
-	        android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_dialog_title"
+            style="@style/CustomDialogTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@+id/btn_dialog_close"
+            android:layout_toRightOf="@+id/iv_dialog_icon"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_dialog_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/custom_dialog_icon_marging"
+            android:background="@drawable/btn_dialog_close_selector"
+            android:maxHeight="@dimen/custom_dialog_close_maxSize"
+            android:maxWidth="@dimen/custom_dialog_close_maxSize"
+            android:minHeight="@dimen/custom_dialog_close_minSize"
+            android:minWidth="@dimen/custom_dialog_close_minSize"
+            android:visibility="gone" />
     </RelativeLayout>
-    <FrameLayout 
+
+    <FrameLayout
         android:id="@+id/fl_dialog_body"
         android:layout_width="match_parent"
         android:layout_height="0dip"
         android:layout_weight="1"
-        android:padding="@dimen/custom_dialog_body_padding"
         android:background="@drawable/bg_dialog_center"
-        android:visibility="visible">
-	    <LinearLayout 
-	        android:orientation="vertical"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content">
-	        <TextView 
-	            style="@style/CustomDialogMessage"
-	            android:id="@+id/tv_dialog_message"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:visibility="gone" />
-	        <EditText 
-	            style="@style/CustomDialogInput"
-	            android:id="@+id/tv_dialog_input"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:layout_marginTop="@dimen/custom_dialog_msg_input_marging"
-	            android:inputType="text"
-	            android:visibility="gone" />
-	    </LinearLayout>
-        <ListView 
+        android:visibility="visible" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+        	android:padding="@dimen/custom_dialog_body_padding" >
+
+            <TextView
+                android:id="@+id/tv_dialog_message"
+                style="@style/CustomDialogMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/tv_dialog_input"
+                style="@style/CustomDialogInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/custom_dialog_msg_input_marging"
+                android:inputType="text"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <ListView
             android:id="@+id/lv_dialog_items"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:divider="@drawable/list_divider"
-            android:listSelector="@color/dialog_transparent"
+            android:layout_margin="@dimen/custom_dialog_body_padding"
             android:cacheColorHint="@color/dialog_transparent"
-        	android:scrollingCache="false"
-        	android:fadingEdge="none"
-            android:visibility="gone">
-            
+            android:divider="@drawable/list_divider"
+            android:fadingEdge="none"
+            android:listSelector="@color/dialog_transparent"
+            android:scrollingCache="false"
+            android:visibility="gone" >
         </ListView>
     </FrameLayout>
-    <LinearLayout 
+
+    <LinearLayout
         android:id="@+id/ll_dialog_foot"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="@dimen/custom_dialog_foot_padding"
-        android:background="@drawable/bg_dialog_bottom">
-        <Button 
-            style="@style/CustomDialogNegativeButton"
-            android:id="@+id/btn_dialog_negative"
+        android:background="@drawable/bg_dialog_bottom"
+        android:orientation="horizontal" >
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:visibility="gone"/>
-        <Button 
-            style="@style/CustomDialogPositiveButton"
-            android:id="@+id/btn_dialog_positive"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:visibility="gone"/>
+            android:orientation="horizontal"
+            android:padding="@dimen/custom_dialog_foot_padding"
+            tools:ignore="UselessParent" >
+
+            <Button
+                android:id="@+id/btn_dialog_negative"
+                style="@style/CustomDialogNegativeButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_dialog_positive"
+                style="@style/CustomDialogPositiveButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="gone" />
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>
