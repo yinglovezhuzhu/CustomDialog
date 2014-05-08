@@ -27,8 +27,9 @@
 	<dimen name="custom_dialog_item_iconSize">18dip</dimen>
 	<dimen name="custom_dialog_item_icon_marging">10dip</dimen>
 	
-	<dimen name="custom_progressdialog_content_padding">10dip</dimen>
+	<dimen name="custom_progressdialog_content_padding">12dip</dimen>
 	<dimen name="custom_progressdialog_progress_text_marging">10dip</dimen>
 	<dimen name="custom_progressdialog_message_textSize">17sp</dimen>
+	<dimen name="custom_progressdialog_progress_size">40dip</dimen>
 	<!-- 对话框End -->
 </resources>

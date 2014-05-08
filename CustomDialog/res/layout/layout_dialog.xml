@@ -86,7 +86,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/custom_dialog_body_padding"
             android:cacheColorHint="@color/dialog_transparent"
-            android:divider="@drawable/list_divider"
+            android:divider="@drawable/dialog_list_divider"
             android:fadingEdge="none"
             android:listSelector="@color/dialog_transparent"
             android:scrollingCache="false"

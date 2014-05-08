@@ -3,19 +3,40 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:padding="@dimen/custom_progressdialog_content_padding"
-    android:orientation="horizontal"
-    android:gravity="center_vertical" >
+    android:orientation="vertical"
+    android:gravity="center" >
     <ProgressBar 
         style="@android:style/Widget.ProgressBar.Large"
         android:id="@+id/pb_custom_progressdialog_spinner_progress"
-        android:layout_width="36dip"
-        android:layout_height="36dip"
-        android:indeterminateDrawable="@drawable/dialog_progress"
+        android:layout_width="@dimen/custom_progressdialog_progress_size"
+        android:layout_height="@dimen/custom_progressdialog_progress_size"
+        android:indeterminateDrawable="@drawable/progress_drawable_round_white"
         android:indeterminateDuration="3"/>
 	<TextView 
 	    android:id="@+id/tv_custom_progressdialog_spinner_msg"
 	    style="@style/CustomProgressDialogMessage"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	    android:layout_marginLeft="@dimen/custom_progressdialog_progress_text_marging"/>
+	    android:layout_marginTop="@dimen/custom_progressdialog_progress_text_marging"/>
 </LinearLayout>
+<!-- <?xml version="1.0" encoding="utf-8"?> -->
+<!-- <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" -->
+<!--     android:layout_width="wrap_content" -->
+<!--     android:layout_height="wrap_content" -->
+<!--     android:padding="@dimen/custom_progressdialog_content_padding" -->
+<!--     android:orientation="horizontal" -->
+<!--     android:gravity="center_vertical" > -->
+<!--     <ProgressBar  -->
+<!--         style="@android:style/Widget.ProgressBar.Large" -->
+<!--         android:id="@+id/pb_custom_progressdialog_spinner_progress" -->
+<!--         android:layout_width="36dip" -->
+<!--         android:layout_height="36dip" -->
+<!--         android:indeterminateDrawable="@drawable/dialog_progress" -->
+<!--         android:indeterminateDuration="3"/> -->
+<!-- 	<TextView  -->
+<!-- 	    android:id="@+id/tv_custom_progressdialog_spinner_msg" -->
+<!-- 	    style="@style/CustomProgressDialogMessage" -->
+<!-- 	    android:layout_width="wrap_content" -->
+<!-- 	    android:layout_height="wrap_content" -->
+<!-- 	    android:layout_marginLeft="@dimen/custom_progressdialog_progress_text_marging"/> -->
+<!-- </LinearLayout> -->
