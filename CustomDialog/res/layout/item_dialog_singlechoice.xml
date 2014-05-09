@@ -30,7 +30,7 @@
 	    android:layout_alignParentRight="true"
 	    android:layout_centerVertical="true"
 	    android:layout_marginLeft="@dimen/custom_dialog_item_icon_marging"
-	    android:button="@drawable/btn_radio_selector"
+	    android:button="@drawable/selector_radio_btn"
 	    android:focusable="false"
 	    android:focusableInTouchMode="false"
 	    android:clickable="false"/>

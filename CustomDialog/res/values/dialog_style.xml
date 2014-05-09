@@ -42,7 +42,7 @@
 	    <item name="android:minHeight">@dimen/menu_dialog_menu_item_minHeight</item>
 	    <item name="android:gravity">center</item>
 	    <item name="android:textSize">@dimen/menu_dialog_menu_item_textSize</item>
-	    <item name="android:background">@drawable/btn_menudialog_item_selector</item>
+	    <item name="android:background">@drawable/selector_menudialog_item_btn</item>
 	    <item name="android:textColor">@color/dialog_text_color_black</item>
 	    <item name="android:shadowRadius">1</item>
 	    <item name="android:shadowDy">1.3</item>
@@ -53,7 +53,7 @@
 	    <item name="android:minHeight">@dimen/menu_dialog_menu_item_minHeight</item>
 	    <item name="android:gravity">center</item>
 	    <item name="android:textSize">@dimen/menu_dialog_menu_item_textSize</item>
-	    <item name="android:background">@drawable/btn_menudialog_cancel_selector</item>
+	    <item name="android:background">@drawable/selector_menudialog_cancel_btn</item>
 	    <item name="android:textColor">@color/dialog_text_color_white</item>
 	    <item name="android:shadowRadius">1</item>
 	    <item name="android:shadowDy">1.3</item>
@@ -105,7 +105,7 @@
 	</style>
 	
 	<style name="CustomDialogPositiveButton" parent="@style/CustomDialogButton">
-	    <item name="android:background">@drawable/btn_dialog_positive_selector</item>
+	    <item name="android:background">@drawable/selector_custom_dialog_positive_btn</item>
 	    <item name="android:layout_marginLeft">@dimen/custom_dialog_button_margin</item>
 	    <item name="android:textColor">@color/dialog_text_color_white</item>
 	    <item name="android:shadowColor">@color/dialog_black_shadow</item>
@@ -114,7 +114,7 @@
 	</style>
 	
 	<style name="CustomDialogNegativeButton" parent="@style/CustomDialogButton">
-	    <item name="android:background">@drawable/btn_dialog_negative_selector</item>
+	    <item name="android:background">@drawable/selector_custom_dialog_negative_btn</item>
 	    <item name="android:textColor">@color/dialog_text_color_black</item>
 	    <item name="android:layout_marginRight">@dimen/custom_dialog_button_margin</item>
 	    <item name="android:shadowColor">@color/dialog_white_shadow</item>

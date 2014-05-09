@@ -41,7 +41,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/custom_dialog_icon_marging"
-            android:background="@drawable/btn_dialog_close_selector"
+            android:background="@drawable/selector_custom_dialog_close_btn"
             android:maxHeight="@dimen/custom_dialog_close_maxSize"
             android:maxWidth="@dimen/custom_dialog_close_maxSize"
             android:minHeight="@dimen/custom_dialog_close_minSize"

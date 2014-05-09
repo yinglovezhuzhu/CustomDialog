@@ -100,7 +100,7 @@ public class MainActivity extends Activity implements OnClickListener{
 			new CustomDialog(this)
 			.setIcon(R.drawable.ic_launcher)
 			.setTitleText(R.string.app_name)
-			.setCloseButton(R.drawable.btn_dialog_close_selector)
+			.setCloseButton(R.drawable.selector_custom_dialog_close_btn)
 			.setMessage(R.string.message)
 			.setPositiveButton(R.string.dialog_ok, new DialogInterface.OnClickListener() {
 				
