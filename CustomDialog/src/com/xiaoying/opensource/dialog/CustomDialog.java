@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.util.DisplayMetrics;
 import android.util.SparseBooleanArray;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -690,6 +691,168 @@ public class CustomDialog extends Dialog {
 		mRlTitle.setBackgroundColor(title);
 		mFlBody.setBackgroundColor(content);
 		mLlFoot.setBackgroundColor(foot);
+		return this;
+	}
+	
+	/**
+	 * Set title default text color.
+	 * @param color value -1 to use default color.
+	 * @return
+	 */
+	public CustomDialog setTitleTextColor(int color) {
+		if(color > -1) {
+			mTvTitle.setTextColor(color);
+		}
+		return this;
+	}
+	
+	/**
+	 * Set title default text size
+	 * @param size value 0 to use default size.
+	 * @return
+	 */
+	public CustomDialog setTitleTextSize(float size) {
+		if(size > 0) {
+			mTvTitle.setTextSize(size);
+		}
+		return this;
+	}
+	
+	/**
+	 * Set the title default text size to a given unit and value. <br>
+	 * See {@link TypedValue} for the possible dimension units.
+	 * @param size
+	 * @return
+	 */
+	public CustomDialog setTitleTextSize(int unit, float size) {
+		if(size > 0) {
+			mTvTitle.setTextSize(unit, size);;
+		}
+		return this;
+	}
+	
+	/**
+	 * Set message default text color
+	 * @param color, value -1 to use default color.
+	 * @return
+	 */
+	public CustomDialog setMessageTextColor(int color) {
+		if(color > -1) {
+			mTvMessage.setTextColor(color);
+		}
+		return this;
+	}
+	
+	/**
+	 * Set message text default size
+	 * @param size value 0 to use default size.
+	 * @return
+	 */
+	public CustomDialog setMessageTextSize(float size) {
+		if(size > 0) {
+			mTvMessage.setTextSize(size);
+		}
+		return this;
+	}
+	
+	/**
+	 * Set the message default text size to a given unit and value. <br>
+	 * See {@link TypedValue} for the possible dimension units.
+	 * @param size
+	 * @return
+	 */
+	public CustomDialog setMessageTextSize(int unit, float size) {
+		if(size > 0) {
+			mTvMessage.setTextSize(unit, size);;
+		}
+		return this;
+	}
+	
+	/**
+	 * Set the title default text style<br>
+	 * <p>the text size to a given unit and value. See {@link TypedValue} for the possible dimension units.
+	 * @param textColor text color, value -1 to user default.
+	 * @param unit
+	 * @param textSize value 0 to use default size.
+	 * @return
+	 */
+	public CustomDialog setTitleStyle(int textColor, int unit, float textSize) {
+		if(textColor > -1) {
+			mTvTitle.setTextColor(textColor);
+		}
+		if(textSize > 0) {
+			mTvTitle.setTextSize(unit, textSize);
+		}
+		return this;
+	}
+	
+	/**
+	 * Set the title default text style<br>
+	 * <p>the text size to a given unit and value. See {@link TypedValue} for the possible dimension units.
+	 * @param textColor value -1 to use default color
+	 * @param unit
+	 * @param textSize value 0 to use default size.
+	 * @return
+	 */
+	public CustomDialog setMessageStyle(int textColor, int unit, float textSize) {
+		if(textColor > -1) {
+			mTvMessage.setTextColor(textColor);
+		}
+		if(textSize > 0) {
+			mTvMessage.setTextSize(unit, textSize);
+		}
+		return this;
+	}
+	
+	/**
+	 * Set positive button style
+	 * @param bgRes background resource. value 0 to use default backgroud
+	 * @param textColor value -1 to use default color
+	 * @param unit
+	 * @param textSize value 0 to use default size.
+	 * @return
+	 */
+	public CustomDialog setPositiveButtonStyle(int bgRes, int textColor, int unit, float textSize) {
+		if(bgRes > 0) {
+			mBtnPositive.setBackgroundResource(bgRes);
+		}
+		if(textColor > -1) {
+			mBtnPositive.setTextColor(textColor);
+		}
+		if(textSize > 0) {
+			mBtnPositive.setTextSize(unit, textSize);
+		}
+		return this;
+	}
+	
+	/**
+	 * Set negative button style
+	 * @param bgRes background resource. value 0 to use default backgroud
+	 * @param textColor value -1 to use default color
+	 * @param unit
+	 * @param textSize value 0 to use default size.
+	 * @return
+	 */
+	public CustomDialog setnNegativeButtonStyle(int bgRes, int textColor, int unit, float textSize) {
+		if(bgRes > 0) {
+			mBtnNegative.setBackgroundResource(bgRes);
+		}
+		if(textColor > -1) {
+			mBtnNegative.setTextColor(textColor);
+		}
+		if(textSize > 0) {
+			mBtnNegative.setTextSize(unit, textSize);
+		}
+		return this;
+	}
+	
+	/**
+	 * Set close button backgroud resource
+	 * @param resid
+	 * @return
+	 */
+	public CustomDialog setCloseButtonBackgroud(int resid) {
+		mBtnClose.setBackgroundResource(resid);
 		return this;
 	}
 	
