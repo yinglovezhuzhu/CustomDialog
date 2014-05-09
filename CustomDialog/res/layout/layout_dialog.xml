@@ -19,7 +19,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/custom_dialog_icon_marging"
-            android:background="@drawable/ic_launcher"
+            android:src="@drawable/ic_launcher"
             android:contentDescription="@string/app_name"
             android:scaleType="fitCenter"
             android:visibility="gone" />
