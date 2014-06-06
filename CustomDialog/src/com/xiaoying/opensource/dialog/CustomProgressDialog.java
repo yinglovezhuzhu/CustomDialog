@@ -86,26 +86,27 @@ public class CustomProgressDialog extends Dialog {
     
     public static CustomProgressDialog show(Context context, CharSequence title,
             CharSequence message) {
-        return show(context, title, message, false);
+        return show(context, title, message, false, null);
     }
 
     public static CustomProgressDialog show(Context context, CharSequence title,
-            CharSequence message, boolean indeterminate) {
-        return show(context, title, message, indeterminate, false, null);
+            CharSequence message, boolean indeterminate, Drawable d) {
+        return show(context, title, message, indeterminate, d, false, null);
     }
 
     public static CustomProgressDialog show(Context context, CharSequence title,
-            CharSequence message, boolean indeterminate, boolean cancelable) {
-        return show(context, title, message, indeterminate, cancelable, null);
+            CharSequence message, boolean indeterminate, Drawable d, boolean cancelable) {
+        return show(context, title, message, indeterminate, d, cancelable, null);
     }
 
     public static CustomProgressDialog show(Context context, CharSequence title,
-            CharSequence message, boolean indeterminate,
+            CharSequence message, boolean indeterminate, Drawable d, 
             boolean cancelable, OnCancelListener cancelListener) {
         CustomProgressDialog dialog = new CustomProgressDialog(context);
         dialog.setTitle(title);
         dialog.setMessage(message);
         dialog.setIndeterminate(indeterminate);
+        dialog.setIndeterminateDrawable(d);
         dialog.setCancelable(cancelable);
         dialog.setOnCancelListener(cancelListener);
         dialog.show();
