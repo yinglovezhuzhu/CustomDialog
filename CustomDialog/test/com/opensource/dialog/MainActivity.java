@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */	
-package com.opensource.dialog.test;
+package com.opensource.dialog;
 
 import android.app.Activity;
 import android.content.DialogInterface;
