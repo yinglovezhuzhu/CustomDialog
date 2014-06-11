@@ -1,17 +1,22 @@
 /*
- * 文件名：CustomProgressDialog.java
- * 版权：<版权>
- * 描述：<描述>
- * 创建人：xiaoying
- * 创建时间：2013年9月1日
- * 修改人：xiaoying
- * 修改时间：2013年9月1日
- * 版本：v1.0
+ * Copyright (C) 2014  The Android Open Source Project.
+ *
+ *		yinglovezhuzhu@gmail.com
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ * 		http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
-package com.xiaoying.opensource.dialog;
-
-import java.text.NumberFormat;
+package com.opensource.dialog;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -30,6 +35,8 @@ import android.view.View;
 import android.view.WindowManager.LayoutParams;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import java.text.NumberFormat;
 
 /**
  * 功能：
@@ -335,9 +342,9 @@ public class CustomProgressDialog extends Dialog {
     /**
      * Change the format of the small text showing the percentage of progress.
      * The default is
-     * {@link NumberFormat#getPercentInstance() NumberFormat.getPercentageInstnace().}
+     * {@link java.text.NumberFormat#getPercentInstance() NumberFormat.getPercentageInstnace().}
      * Should not be called during the number is progressing.
-     * @param format An instance of a {@link NumberFormat} to generate the
+     * @param format An instance of a {@link java.text.NumberFormat} to generate the
      * percentage text.  If null, nothing will be shown.
      */
     public void setProgressPercentFormat(NumberFormat format) {

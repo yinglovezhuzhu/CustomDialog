@@ -1,11 +1,28 @@
-package com.xiaoying.opensource.dialog;
+/*
+ * Copyright (C) 2014  The Android Open Source Project.
+ *
+ *		yinglovezhuzhu@gmail.com
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ * 		http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */	
+
+package com.opensource.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.util.DisplayMetrics;
 import android.util.SparseBooleanArray;
-import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,15 +68,15 @@ public class CustomDialog extends Dialog {
 	
 	private Button mBtnNegative = null;
 	
-	private DialogInterface.OnClickListener mColseClickListener = null;
+	private OnClickListener mColseClickListener = null;
 	
-	private DialogInterface.OnClickListener mPositiveClickListener = null;
+	private OnClickListener mPositiveClickListener = null;
 	
-	private DialogInterface.OnClickListener mNegativeClickListener = null;
+	private OnClickListener mNegativeClickListener = null;
 	
-	private DialogInterface.OnClickListener mItemClickListener = null;
+	private OnClickListener mItemClickListener = null;
 	
-	private DialogInterface.OnMultiChoiceClickListener mMultiChoiceClickListener = null;
+	private OnMultiChoiceClickListener mMultiChoiceClickListener = null;
 	
 	public CustomDialog(Context context, boolean cancelable, OnCancelListener cancelListener) {
 		super(context, cancelable, cancelListener);
@@ -172,7 +189,7 @@ public class CustomDialog extends Dialog {
 	 * @param listener
 	 * @return
 	 */
-	public CustomDialog setCloseButton(int resid, DialogInterface.OnClickListener listener) {
+	public CustomDialog setCloseButton(int resid, OnClickListener listener) {
 		mBtnClose.setVisibility(View.VISIBLE);
 		mBtnClose.setBackgroundResource(resid);
 		this.mColseClickListener = listener;
@@ -193,7 +210,7 @@ public class CustomDialog extends Dialog {
 	 * @return
 	 */
 	public CustomDialog setCloseButton(int resid) {
-		return setCloseButton(resid, new DialogInterface.OnClickListener() {
+		return setCloseButton(resid, new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.cancel();
@@ -247,8 +264,8 @@ public class CustomDialog extends Dialog {
 	}
 	
 	/**
+	 * @param hintRes
 	 * Set dialog input.
-	 * @param hint
 	 * @return
 	 */
 	public CustomDialog setInput(int hintRes) {
@@ -285,7 +302,7 @@ public class CustomDialog extends Dialog {
 	
 	/**
 	 * Set dialog input text. If input EditText dose not visibility, it would't set.
-	 * @param text
+	 * @param resId
 	 */
 	public void setInputText(int resId) {
 		if(mEtInput.getVisibility() == View.VISIBLE) {
@@ -300,7 +317,7 @@ public class CustomDialog extends Dialog {
 	 * @param listener
 	 * @return
 	 */
-	public CustomDialog setPositiveButton(int resId, DialogInterface.OnClickListener listener) {
+	public CustomDialog setPositiveButton(int resId, OnClickListener listener) {
 		mBtnPositive.setVisibility(View.VISIBLE);
 		mBtnPositive.setText(resId);
 		mPositiveClickListener = listener;
@@ -322,7 +339,7 @@ public class CustomDialog extends Dialog {
 	 * @param listener
 	 * @return
 	 */
-	public CustomDialog setPositiveButton(CharSequence text, DialogInterface.OnClickListener listener) {
+	public CustomDialog setPositiveButton(CharSequence text, OnClickListener listener) {
 		mBtnPositive.setVisibility(View.VISIBLE);
 		mBtnPositive.setText(text);
 		mPositiveClickListener = listener;
@@ -344,7 +361,7 @@ public class CustomDialog extends Dialog {
 	 * @param listener
 	 * @return
 	 */
-	public CustomDialog setNegativeButton(int resId, DialogInterface.OnClickListener listener) {
+	public CustomDialog setNegativeButton(int resId, OnClickListener listener) {
 		mBtnNegative.setVisibility(View.VISIBLE);
 		mBtnNegative.setText(resId);
 		mNegativeClickListener = listener;
@@ -366,7 +383,7 @@ public class CustomDialog extends Dialog {
 	 * @param listener
 	 * @return
 	 */
-	public CustomDialog setNegativeButton(CharSequence text, DialogInterface.OnClickListener listener) {
+	public CustomDialog setNegativeButton(CharSequence text, OnClickListener listener) {
 		mBtnNegative.setVisibility(View.VISIBLE);
 		mBtnNegative.setText(text);
 		mNegativeClickListener = listener;
@@ -417,7 +434,7 @@ public class CustomDialog extends Dialog {
 	 * @param listener
 	 * @return
 	 */
-	public CustomDialog setItems(CharSequence [] items, int [] icons, int textGravity, DialogInterface.OnClickListener listener) {
+	public CustomDialog setItems(CharSequence [] items, int [] icons, int textGravity, OnClickListener listener) {
 		this.mItemClickListener = listener;
 		if(items != null && items.length > 0) {
 			if(icons != null && icons.length != items.length) {
@@ -449,7 +466,7 @@ public class CustomDialog extends Dialog {
 	 * @param listener
 	 * @return
 	 */
-	public CustomDialog setItems(CharSequence [] items, int textGravity, DialogInterface.OnClickListener listener) {
+	public CustomDialog setItems(CharSequence [] items, int textGravity, OnClickListener listener) {
 		return setItems(items, null, textGravity, listener);
 	}
 	
@@ -460,7 +477,7 @@ public class CustomDialog extends Dialog {
 	 * @param listener
 	 * @return
 	 */
-	public CustomDialog setItems(CharSequence [] items, int [] icons, DialogInterface.OnClickListener listener) {
+	public CustomDialog setItems(CharSequence [] items, int [] icons, OnClickListener listener) {
 		return setItems(items, icons, Gravity.LEFT, listener);
 	}
 	
@@ -470,7 +487,7 @@ public class CustomDialog extends Dialog {
 	 * @param listener
 	 * @return
 	 */
-	public CustomDialog setItems(CharSequence [] items, DialogInterface.OnClickListener listener) {
+	public CustomDialog setItems(CharSequence [] items, OnClickListener listener) {
 		return setItems(items, null, Gravity.LEFT, listener);
 	}
 	
@@ -482,7 +499,7 @@ public class CustomDialog extends Dialog {
 	 * @param listener
 	 * @return
 	 */
-	public CustomDialog setSingleChoiceItems(CharSequence [] items, int [] icons, int checkedItem, DialogInterface.OnClickListener listener) {
+	public CustomDialog setSingleChoiceItems(CharSequence [] items, int [] icons, int checkedItem, OnClickListener listener) {
 		this.mItemClickListener = listener;
 		if(items != null && items.length > 0) {
 			if(icons != null && icons.length != items.length) {
@@ -514,7 +531,7 @@ public class CustomDialog extends Dialog {
 	 * @param listener
 	 * @return
 	 */
-	public CustomDialog setSingleChoiceItems(CharSequence [] items, int checkedItem, DialogInterface.OnClickListener listener) {
+	public CustomDialog setSingleChoiceItems(CharSequence [] items, int checkedItem, OnClickListener listener) {
 		return setSingleChoiceItems(items, null, checkedItem, listener);
 	}
 	
@@ -525,14 +542,14 @@ public class CustomDialog extends Dialog {
 	 * @param listener
 	 * @return
 	 */
-	public CustomDialog setSingleChoiceItems(int textResId, int checkedItem, DialogInterface.OnClickListener listener) {
+	public CustomDialog setSingleChoiceItems(int textResId, int checkedItem, OnClickListener listener) {
 		CharSequence [] items = getContext().getResources().getStringArray(textResId);
 		return setSingleChoiceItems(items, null, checkedItem, listener);
 	}
 
 	/**
 	 * Returns the currently checked item. 
-	 * Note: The result is only valid if the items is {@link CustomDialog#setSingleChoiceItems(CharSequence[], int, android.content.DialogInterface.OnClickListener)}(include all of method named setSingleChoiceItems())
+	 * Note: The result is only valid if the items is {@link com.opensource.dialog.CustomDialog#setSingleChoiceItems(CharSequence[], int, android.content.DialogInterface.OnClickListener)}(include all of method named setSingleChoiceItems())
 	 * @return The position of the currently checked item or INVALID_POSITION if nothing is selected
 	 */
 	public int getCheckedPosition() {
@@ -550,7 +567,7 @@ public class CustomDialog extends Dialog {
 	 * @param listener
 	 * @return
 	 */
-	public CustomDialog setMultiChoiceItems(CharSequence [] items, int [] icons, int [] checkedItems, DialogInterface.OnMultiChoiceClickListener listener) {
+	public CustomDialog setMultiChoiceItems(CharSequence [] items, int [] icons, int [] checkedItems, OnMultiChoiceClickListener listener) {
 		this.mMultiChoiceClickListener = listener;
 		if(items != null && items.length > 0) {
 			if(icons != null && icons.length != items.length) {
@@ -590,7 +607,7 @@ public class CustomDialog extends Dialog {
 	 * @param listener
 	 * @return
 	 */
-	public CustomDialog setMultiChoiceItems(CharSequence [] items, int [] checkedItems, DialogInterface.OnMultiChoiceClickListener listener) {
+	public CustomDialog setMultiChoiceItems(CharSequence [] items, int [] checkedItems, OnMultiChoiceClickListener listener) {
 		return setMultiChoiceItems(items, null, checkedItems, listener);
 	}
 	
@@ -601,7 +618,7 @@ public class CustomDialog extends Dialog {
 	 * @param listener
 	 * @return
 	 */
-	public CustomDialog setMultiChoiceItems(int textResId, int [] checkedItems, DialogInterface.OnMultiChoiceClickListener listener) {
+	public CustomDialog setMultiChoiceItems(int textResId, int [] checkedItems, OnMultiChoiceClickListener listener) {
 		CharSequence [] items = getContext().getResources().getStringArray(textResId);
 		return setMultiChoiceItems(items, null, checkedItems, listener);
 	}
@@ -720,7 +737,7 @@ public class CustomDialog extends Dialog {
 	
 	/**
 	 * Set the title default text size to a given unit and value. <br>
-	 * See {@link TypedValue} for the possible dimension units.
+	 * See {@link android.util.TypedValue} for the possible dimension units.
 	 * @param size
 	 * @return
 	 */
@@ -757,7 +774,7 @@ public class CustomDialog extends Dialog {
 	
 	/**
 	 * Set the message default text size to a given unit and value. <br>
-	 * See {@link TypedValue} for the possible dimension units.
+	 * See {@link android.util.TypedValue} for the possible dimension units.
 	 * @param size
 	 * @return
 	 */
@@ -770,7 +787,7 @@ public class CustomDialog extends Dialog {
 	
 	/**
 	 * Set the title default text style<br>
-	 * <p>the text size to a given unit and value. See {@link TypedValue} for the possible dimension units.
+	 * <p>the text size to a given unit and value. See {@link android.util.TypedValue} for the possible dimension units.
 	 * @param textColor text color, value -1 to user default.
 	 * @param unit
 	 * @param textSize value 0 to use default size.
@@ -788,7 +805,7 @@ public class CustomDialog extends Dialog {
 	
 	/**
 	 * Set the title default text style<br>
-	 * <p>the text size to a given unit and value. See {@link TypedValue} for the possible dimension units.
+	 * <p>the text size to a given unit and value. See {@link android.util.TypedValue} for the possible dimension units.
 	 * @param textColor value -1 to use default color
 	 * @param unit
 	 * @param textSize value 0 to use default size.
@@ -875,7 +892,7 @@ public class CustomDialog extends Dialog {
 	
 	/**
 	 * Returns the currently checked items. 
-	 * Note: The result is only valid if the items is {@link CustomDialog#setMultiChoiceItems(CharSequence[], int[], android.content.DialogInterface.OnMultiChoiceClickListener)}(include all of method named setMultiChoiceItems())
+	 * Note: The result is only valid if the items is {@link com.opensource.dialog.CustomDialog#setMultiChoiceItems(CharSequence[], int[], android.content.DialogInterface.OnMultiChoiceClickListener)}(include all of method named setMultiChoiceItems())
 	 * @return The position of the currently checked item or null if items are not multiple choice.
 	 */
 	public SparseBooleanArray getCheckedItemPositions() {

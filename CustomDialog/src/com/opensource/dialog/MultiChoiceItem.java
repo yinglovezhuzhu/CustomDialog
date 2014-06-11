@@ -1,23 +1,31 @@
 /*
- * 文件名：CheckableItem.java
- * 版权：<版权>
- * 描述：<描述>
- * 创建人：xiaoying
- * 创建时间：2013-8-28
- * 修改人：xiaoying
- * 修改时间：2013-8-28
- * 版本：v1.0
+ * Copyright (C) 2014  The Android Open Source Project.
+ *
+ *		yinglovezhuzhu@gmail.com
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ * 		http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-package com.xiaoying.opensource.dialog;
+
+package com.opensource.dialog;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.Checkable;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
 /**
@@ -25,28 +33,28 @@ import android.widget.TextView;
  * @author xiaoying
  *
  */
-public class SingleChoiceItem extends LinearLayout implements Checkable {
+public class MultiChoiceItem extends LinearLayout implements Checkable {
 	/** icon */
 	private ImageView mImageView = null;
 	/** text */
 	private TextView mTextView = null;
-	/** RadioButton */
-	private RadioButton mRadioButton = null;
+	/** CheckBox */
+	private CheckBox mCheckBox = null;
 
-	public SingleChoiceItem(Context context, AttributeSet attrs) {
+	public MultiChoiceItem(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		initView(context);
 	}
 
-	public SingleChoiceItem(Context context) {
+	public MultiChoiceItem(Context context) {
 		this(context, null);
 	}
 	
 	private void initView(Context context) {
-		View.inflate(context, R.layout.item_dialog_singlechoice, this);
-		mImageView = (ImageView) findViewById(R.id.iv_item_dialog_singlechoice_icon);
-		mTextView = (TextView) findViewById(R.id.tv_item_dialog_singlechoice_text);
-		mRadioButton = (RadioButton) findViewById(R.id.rbtn_item_dialog_singlechoice_radio);
+		View.inflate(context, R.layout.item_dialog_multichoice, this);
+		mImageView = (ImageView) findViewById(R.id.iv_item_dialog_multichoice_icon);
+		mTextView = (TextView) findViewById(R.id.tv_item_dialog_multichoice_text);
+		mCheckBox = (CheckBox) findViewById(R.id.cb_item_dialog_multichoice_radio);
 	}
 	
 	/**
@@ -91,17 +99,17 @@ public class SingleChoiceItem extends LinearLayout implements Checkable {
 	
 	@Override
 	public void setChecked(boolean checked) {
-		mRadioButton.setChecked(checked);
+		mCheckBox.setChecked(checked);
 	}
 
 	@Override
 	public boolean isChecked() {
-		return mRadioButton.isChecked();
+		return mCheckBox.isChecked();
 	}
 
 	@Override
 	public void toggle() {
-		mRadioButton.setChecked(!mRadioButton.isChecked());
+		mCheckBox.setChecked(!mCheckBox.isChecked());
 	}
 
 }

@@ -1,17 +1,22 @@
 /*
- * 文件名：MenuDialog.java
- * 版权：<版权>
- * 描述：<描述>
- * 创建人：xiaoying
- * 创建时间：2013-7-30
- * 修改人：xiaoying
- * 修改时间：2013-7-30
- * 版本：v1.0
+ * Copyright (C) 2014  The Android Open Source Project.
+ *
+ *		yinglovezhuzhu@gmail.com
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ * 		http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
-package com.xiaoying.opensource.dialog;
-
-import java.util.List;
+package com.opensource.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -24,6 +29,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import java.util.List;
+
 /**
  * Menu dialog
  * @author xiaoying
@@ -35,9 +42,9 @@ public class MenuDialog extends Dialog {
 	
 	private Button mBtnNegative;
 	
-	private DialogInterface.OnClickListener mClickListener = null;
+	private OnClickListener mClickListener = null;
 	
-	private DialogInterface.OnClickListener mItemClickListener = null;
+	private OnClickListener mItemClickListener = null;
 
 	public MenuDialog(Context context) {
 		this(context, R.style.MenuDialogTheme);
@@ -117,7 +124,7 @@ public class MenuDialog extends Dialog {
 	 * @param listener
 	 * @return
 	 */
-	public MenuDialog setItems(String [] items, DialogInterface.OnClickListener listener) {
+	public MenuDialog setItems(String [] items, OnClickListener listener) {
 		mItemClickListener = listener;
 		mLvItems.setAdapter(new ArrayAdapter<String>(getContext(), R.layout.item_menu_dialog, R.id.tv_item_menudialog, items));
 		return this;
@@ -129,7 +136,7 @@ public class MenuDialog extends Dialog {
 	 * @param listener
 	 * @return
 	 */
-	public MenuDialog setItems(List<String> items, DialogInterface.OnClickListener listener) {
+	public MenuDialog setItems(List<String> items, OnClickListener listener) {
 		mItemClickListener = listener;
 		mLvItems.setAdapter(new ArrayAdapter<String>(getContext(), R.layout.item_menu_dialog, R.id.tv_item_menudialog, items));
 		return this;
