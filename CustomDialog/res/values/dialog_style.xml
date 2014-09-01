@@ -13,7 +13,7 @@
     </style>
     
      <!-- 菜单对话框Start -->
-    <style name="MenuDialogTheme" parent="@style/DialogTheme">
+    <style name="SlidingDialogTheme" parent="@style/DialogTheme">
         <item name="android:windowBackground">@color/dialog_menu_bg_color</item>
         <item name="android:backgroundDimEnabled">true</item>
     </style>

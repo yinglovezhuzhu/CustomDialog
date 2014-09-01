@@ -43,8 +43,9 @@ public class SlidingDialog extends Dialog {
 
 	public SlidingDialog(Context context, boolean cancelable,
 			OnCancelListener cancelListener) {
-		super(context, cancelable, cancelListener);
-		initView(context);
+		this(context, R.style.SlidingDialogTheme);
+		setCancelable(cancelable);
+		setOnCancelListener(cancelListener);
 	}
 
 	public SlidingDialog(Context context, int theme) {
@@ -53,8 +54,7 @@ public class SlidingDialog extends Dialog {
 	}
 
 	public SlidingDialog(Context context) {
-		super(context);
-		initView(context);
+		this(context, R.style.SlidingDialogTheme);
 	}
 
 	@Override

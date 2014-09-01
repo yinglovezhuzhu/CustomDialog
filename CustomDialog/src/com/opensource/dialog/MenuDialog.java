@@ -18,6 +18,8 @@
 
 package com.opensource.dialog;
 
+import java.util.List;
+
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -28,8 +30,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-
-import java.util.List;
 
 /**
  * Menu dialog
@@ -47,7 +47,7 @@ public class MenuDialog extends Dialog {
 	private OnClickListener mItemClickListener = null;
 
 	public MenuDialog(Context context) {
-		this(context, R.style.MenuDialogTheme);
+		this(context, R.style.SlidingDialogTheme);
 
 	}
 	
