@@ -106,7 +106,7 @@ public class SlidingDialog extends Dialog {
 	 * @param l
 	 * @return
 	 */
-	public SlidingDialog setNagativeButton(int resid, DialogInterface.OnClickListener l) {
+	public SlidingDialog setNegativeButton(int resid, DialogInterface.OnClickListener l) {
 		mNegativeListener = l;
 		mBtnNegative.setVisibility(View.VISIBLE);
 		mDivider.setVisibility(View.VISIBLE);
@@ -120,7 +120,7 @@ public class SlidingDialog extends Dialog {
 	 * @param l
 	 * @return
 	 */
-	public SlidingDialog setNagativeButton(CharSequence text, DialogInterface.OnClickListener l) {
+	public SlidingDialog setNegativeButton(CharSequence text, DialogInterface.OnClickListener l) {
 		mNegativeListener = l;
 		mBtnNegative.setVisibility(View.VISIBLE);
 		mDivider.setVisibility(View.VISIBLE);
