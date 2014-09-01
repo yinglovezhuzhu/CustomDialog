@@ -36,6 +36,7 @@ import android.view.WindowManager.LayoutParams;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+
 import java.text.NumberFormat;
 
 /**

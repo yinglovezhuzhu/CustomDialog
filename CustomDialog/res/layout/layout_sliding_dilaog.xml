@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/SlidingDialogPanel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:scrollbars="none"
+        android:fadingEdge="none">
+	    <LinearLayout 
+	        android:id="@+id/ll_slidingdialog_content"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical">
+	        
+	    </LinearLayout>
+    </ScrollView>
+    
+    <View 
+        android:id="@+id/view_slidingdialog_divider"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dip"
+        android:background="@color/dialog_gray"
+        android:visibility="gone"/>
+    
+    <Button 
+        style="@style/SlidingDialogMenuButtonPositive"
+        android:id="@+id/btn_slidingdialog_positive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sliding_dialog_positive_marging"
+        android:layout_marginLeft="@dimen/sliding_dialog_content_paddingLeft"
+        android:layout_marginRight="@dimen/sliding_dialog_content_paddingRight"
+        android:text="@string/dialog_ok"
+        android:visibility="gone"/>
+    
+    <Button 
+        style="@style/SlidingDialogMenuButtonNegative"
+        android:id="@+id/btn_slidingdialog_negative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sliding_dialog_negative_marging"
+        android:layout_marginLeft="@dimen/sliding_dialog_content_paddingLeft"
+        android:layout_marginRight="@dimen/sliding_dialog_content_paddingRight"
+        android:text="@string/dialog_cancel"
+        android:visibility="gone"/>
+
+</LinearLayout>

@@ -27,6 +27,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+
 /**
  * Single choice item view.
  * @author xiaoying

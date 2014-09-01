@@ -39,6 +39,7 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+
 public class CustomDialog extends Dialog {
 	
 	/**
@@ -549,7 +550,7 @@ public class CustomDialog extends Dialog {
 
 	/**
 	 * Returns the currently checked item. 
-	 * Note: The result is only valid if the items is {@link com.opensource.dialog.CustomDialog#setSingleChoiceItems(CharSequence[], int, android.content.DialogInterface.OnClickListener)}(include all of method named setSingleChoiceItems())
+	 * Note: The result is only valid if the items is {@link CustomDialog#setSingleChoiceItems(CharSequence[], int, android.content.DialogInterface.OnClickListener)}(include all of method named setSingleChoiceItems())
 	 * @return The position of the currently checked item or INVALID_POSITION if nothing is selected
 	 */
 	public int getCheckedPosition() {
@@ -558,7 +559,7 @@ public class CustomDialog extends Dialog {
 		}
 		return AbsListView.INVALID_POSITION;
 	}
-	
+
 	/**
 	 * Set dialog multiple choice items, with item icons.
 	 * @param items
@@ -599,7 +600,7 @@ public class CustomDialog extends Dialog {
 		}
 		return this;
 	}
-	
+
 	/**
 	 * Set dialog multiple choice item, with no item icons.
 	 * @param items
@@ -610,7 +611,7 @@ public class CustomDialog extends Dialog {
 	public CustomDialog setMultiChoiceItems(CharSequence [] items, int [] checkedItems, OnMultiChoiceClickListener listener) {
 		return setMultiChoiceItems(items, null, checkedItems, listener);
 	}
-	
+
 	/**
 	 * Set dialog multiple choice item, with no item icons, the string and icons get from resources.
 	 * @param textResId
@@ -622,7 +623,7 @@ public class CustomDialog extends Dialog {
 		CharSequence [] items = getContext().getResources().getStringArray(textResId);
 		return setMultiChoiceItems(items, null, checkedItems, listener);
 	}
-	
+
 	/**
 	 * Set title background resource
 	 * @param resid
@@ -632,7 +633,7 @@ public class CustomDialog extends Dialog {
 		mRlTitle.setBackgroundResource(resid);
 		return this;
 	}
-	
+
 	/**
 	 * Set title background color
 	 * @param color
@@ -642,7 +643,7 @@ public class CustomDialog extends Dialog {
 		mRlTitle.setBackgroundColor(color);
 		return this;
 	}
-	
+
 	/**
 	 * Set content background resource
 	 * @param resid
@@ -652,7 +653,7 @@ public class CustomDialog extends Dialog {
 		mFlBody.setBackgroundResource(resid);
 		return this;
 	}
-	
+
 	/**
 	 * Set content background color
 	 * @param color
@@ -662,7 +663,7 @@ public class CustomDialog extends Dialog {
 		mFlBody.setBackgroundColor(color);
 		return this;
 	}
-	
+
 	/**
 	 * Set foot background resource
 	 * @param resid
@@ -672,7 +673,7 @@ public class CustomDialog extends Dialog {
 		mLlFoot.setBackgroundResource(resid);
 		return this;
 	}
-	
+
 	/**
 	 * Set foot background color
 	 * @param color
@@ -682,7 +683,7 @@ public class CustomDialog extends Dialog {
 		mLlFoot.setBackgroundColor(color);
 		return this;
 	}
-	
+
 	/**
 	 * Set background resources.
 	 * @param title
@@ -710,7 +711,7 @@ public class CustomDialog extends Dialog {
 		mLlFoot.setBackgroundColor(foot);
 		return this;
 	}
-	
+
 	/**
 	 * Set title default text color.
 	 * @param color value -1 to use default color.
@@ -722,7 +723,7 @@ public class CustomDialog extends Dialog {
 		}
 		return this;
 	}
-	
+
 	/**
 	 * Set title default text size
 	 * @param size value 0 to use default size.
@@ -734,7 +735,7 @@ public class CustomDialog extends Dialog {
 		}
 		return this;
 	}
-	
+
 	/**
 	 * Set the title default text size to a given unit and value. <br>
 	 * See {@link android.util.TypedValue} for the possible dimension units.
@@ -747,7 +748,7 @@ public class CustomDialog extends Dialog {
 		}
 		return this;
 	}
-	
+
 	/**
 	 * Set message default text color
 	 * @param color, value -1 to use default color.
@@ -759,7 +760,7 @@ public class CustomDialog extends Dialog {
 		}
 		return this;
 	}
-	
+
 	/**
 	 * Set message text default size
 	 * @param size value 0 to use default size.
@@ -771,7 +772,7 @@ public class CustomDialog extends Dialog {
 		}
 		return this;
 	}
-	
+
 	/**
 	 * Set the message default text size to a given unit and value. <br>
 	 * See {@link android.util.TypedValue} for the possible dimension units.
@@ -784,7 +785,7 @@ public class CustomDialog extends Dialog {
 		}
 		return this;
 	}
-	
+
 	/**
 	 * Set the title default text style<br>
 	 * <p>the text size to a given unit and value. See {@link android.util.TypedValue} for the possible dimension units.
@@ -802,7 +803,7 @@ public class CustomDialog extends Dialog {
 		}
 		return this;
 	}
-	
+
 	/**
 	 * Set the title default text style<br>
 	 * <p>the text size to a given unit and value. See {@link android.util.TypedValue} for the possible dimension units.
@@ -820,7 +821,7 @@ public class CustomDialog extends Dialog {
 		}
 		return this;
 	}
-	
+
 	/**
 	 * Set positive button style
 	 * @param bgRes background resource. value 0 to use default backgroud
@@ -841,7 +842,7 @@ public class CustomDialog extends Dialog {
 		}
 		return this;
 	}
-	
+
 	/**
 	 * Set negative button style
 	 * @param bgRes background resource. value 0 to use default backgroud
@@ -862,7 +863,7 @@ public class CustomDialog extends Dialog {
 		}
 		return this;
 	}
-	
+
 	/**
 	 * Set close button backgroud resource
 	 * @param resid
@@ -872,7 +873,7 @@ public class CustomDialog extends Dialog {
 		mBtnClose.setBackgroundResource(resid);
 		return this;
 	}
-	
+
 	/**
 	 * Set custom view to the custom dialog.
 	 * @param view
@@ -882,17 +883,17 @@ public class CustomDialog extends Dialog {
 		mTvMessage.setVisibility(View.GONE);
 		mEtInput.setVisibility(View.GONE);
 		mListView.setVisibility(View.GONE);
-		FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, 
+		FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,
 				FrameLayout.LayoutParams.MATCH_PARENT);
 		mFlBody.addView(view, lp);
 		mFlBody.bringChildToFront(view);
 		return this;
 	}
-	
-	
+
+
 	/**
-	 * Returns the currently checked items. 
-	 * Note: The result is only valid if the items is {@link com.opensource.dialog.CustomDialog#setMultiChoiceItems(CharSequence[], int[], android.content.DialogInterface.OnMultiChoiceClickListener)}(include all of method named setMultiChoiceItems())
+	 * Returns the currently checked items.
+	 * Note: The result is only valid if the items is {@link CustomDialog#setMultiChoiceItems(CharSequence[], int[], android.content.DialogInterface.OnMultiChoiceClickListener)}(include all of method named setMultiChoiceItems())
 	 * @return The position of the currently checked item or null if items are not multiple choice.
 	 */
 	public SparseBooleanArray getCheckedItemPositions() {

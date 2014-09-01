@@ -61,7 +61,7 @@ public class MenuDialog extends Dialog {
 		setContentView(R.layout.layout_menu_dilaog);
 		
 		getWindow().setGravity(Gravity.BOTTOM);
-		getWindow().setWindowAnimations(R.style.MenuDialogAnimation);
+		getWindow().setWindowAnimations(R.style.SlidingDialogAnimation);
 		LayoutParams lp = getWindow().getAttributes();
 		lp.width = LayoutParams.MATCH_PARENT;
 		lp.height = LayoutParams.WRAP_CONTENT;
