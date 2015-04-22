@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */	
-package com.opensource.dialog;
+package com.opensource.dialog.demo;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -27,7 +27,6 @@ import android.widget.Toast;
 import com.opensource.dialog.CustomDialog;
 import com.opensource.dialog.CustomProgressDialog;
 import com.opensource.dialog.MenuDialog;
-import com.opensource.dialog.R;
 
 /**
  * Use：
